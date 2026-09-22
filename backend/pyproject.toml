@@ -1,0 +1,13 @@
+[project]
+name = "arch-nemesis-reload-backend"
+version = "0.1.0"
+description = "Backend for Arch Nemesis: Reload"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100

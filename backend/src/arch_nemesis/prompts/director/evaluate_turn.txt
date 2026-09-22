@@ -1,0 +1,12 @@
+Game context:
+Persuasion: {persuasion}
+Anger: {anger}
+Turn count: {turn_count}
+
+Player argument:
+{argument}
+
+Fact check:
+{fact_check}
+
+Return JSON with: intent, argument_quality, persuasion_delta, anger_delta, reason.

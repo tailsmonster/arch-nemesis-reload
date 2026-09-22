@@ -1,0 +1,9 @@
+name: arch-nemesis-reload-backend
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - sqlite
+  - pip:
+      - -r requirements.txt

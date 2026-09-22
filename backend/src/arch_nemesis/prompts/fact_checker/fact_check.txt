@@ -1,0 +1,4 @@
+Player argument:
+{argument}
+
+Return JSON with: summary, factuality_score, notable_claims, concerns.

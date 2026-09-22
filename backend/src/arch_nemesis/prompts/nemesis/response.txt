@@ -1,0 +1,12 @@
+Game context:
+Persuasion: {persuasion}
+Anger: {anger}
+Turn count: {turn_count}
+
+Player argument:
+{argument}
+
+Director reason:
+{reason}
+
+Write the Nemesis reply.
