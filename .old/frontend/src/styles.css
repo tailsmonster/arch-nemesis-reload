@@ -1,0 +1,405 @@
+:root {
+  color: #f8f7ff;
+  background: #020817;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled,
+textarea:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.app-shell {
+  background: #020817;
+  display: grid;
+  grid-template-columns: 420px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #0c0432;
+  border-right: 1px solid #00d9ff;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+  padding: 30px 38px 48px;
+}
+
+.brand-card {
+  position: relative;
+}
+
+.logo-placeholder {
+  align-items: center;
+  background:
+    linear-gradient(45deg, rgb(255 255 255 / 0.75) 25%, transparent 25%),
+    linear-gradient(-45deg, rgb(255 255 255 / 0.75) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgb(255 255 255 / 0.75) 75%),
+    linear-gradient(-45deg, transparent 75%, rgb(255 255 255 / 0.75) 75%);
+  background-color: #eeeeee;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-size: 20px 20px;
+  color: #05050f;
+  display: flex;
+  height: 122px;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  margin: 0 8px 70px;
+}
+
+.button {
+  border: 0;
+  border-radius: 0;
+  color: #05050f;
+  min-height: 40px;
+  padding: 10px 14px;
+}
+
+.button-primary,
+.button-block {
+  background: #d9d9d9;
+}
+
+.button-ghost {
+  background: transparent;
+  color: #f8f7ff;
+}
+
+.menu-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.menu-item,
+.menu-skeleton {
+  background: #d9d9d9;
+  border: 0;
+  color: #05050f;
+  min-height: 40px;
+  width: 100%;
+}
+
+.menu-item {
+  display: grid;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.menu-item small,
+.muted {
+  color: #7b7b87;
+}
+
+.menu-copy {
+  margin: 0 0 8px;
+}
+
+.event-log {
+  color: #c7c2e9;
+  font-size: 0.85rem;
+  margin-bottom: 26px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.event-log h2 {
+  color: #f8f7ff;
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+
+.new-game-button {
+  min-height: 62px;
+  width: 100%;
+}
+
+.main-panel {
+  display: grid;
+  grid-template-rows: 62px minmax(0, 1fr) 122px;
+  max-height: 100vh;
+  min-width: 0;
+}
+
+.top-stats-bar {
+  align-items: center;
+  background: #0c0432;
+  border-bottom: 1px solid #00d9ff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 0 12px;
+}
+
+.top-stats-bar span:nth-child(2),
+.top-stats-bar span:nth-child(3) {
+  text-align: center;
+}
+
+.top-stats-bar span:last-child {
+  text-align: right;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.stage-shell {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-stage {
+  min-height: 0;
+  overflow: auto;
+  padding: 38px 66px 30px;
+}
+
+.chat-empty {
+  display: grid;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 980px;
+  padding-top: 0;
+}
+
+.mock-message {
+  background: #d9d9d9;
+  height: 104px;
+  width: min(46vw, 606px);
+}
+
+.mock-message-left {
+  justify-self: start;
+}
+
+.mock-message-right {
+  justify-self: end;
+}
+
+.mock-message.wide {
+  height: 122px;
+}
+
+.conversation-log {
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.turn-pair {
+  display: grid;
+  gap: 18px;
+}
+
+.chat-bubble-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-bubble-wrap-right {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  background: #d9d9d9;
+  color: #08090f;
+  max-width: min(58vw, 620px);
+  min-width: min(40vw, 360px);
+  padding: 18px 20px;
+}
+
+.chat-bubble p {
+  line-height: 1.55;
+  margin: 8px 0 0;
+}
+
+.turn-points {
+  background: rgb(12 4 50 / 0.88);
+  border: 1px solid rgb(0 217 255 / 0.35);
+  color: #cfcaff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-self: center;
+  max-width: 760px;
+  padding: 10px 14px;
+}
+
+.turn-points p {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.chat-composer {
+  align-items: end;
+  background: #3d3d3d;
+  border-radius: 34px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  margin: 0 auto 26px;
+  max-width: 964px;
+  min-height: 88px;
+  padding: 16px 18px 16px 34px;
+  width: min(calc(100% - 96px), 964px);
+}
+
+.chat-composer textarea {
+  background: transparent;
+  border: 0;
+  color: #f8f7ff;
+  max-height: 190px;
+  min-height: 24px;
+  outline: none;
+  overflow-y: auto;
+  resize: none;
+}
+
+.chat-composer textarea::placeholder {
+  color: #f8f7ff;
+  opacity: 0.92;
+}
+
+.chat-composer .button {
+  align-items: center;
+  background: #d9d9d9;
+  border-radius: 999px;
+  color: #05050f;
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0;
+  width: 38px;
+}
+
+.footer-meter {
+  background: #0c0432;
+  border-top: 1px solid #00d9ff;
+  padding: 34px 28px 24px;
+}
+
+.meter-copy {
+  margin-bottom: 10px;
+}
+
+.meter-track {
+  background: #d9d9d9;
+  border-radius: 999px;
+  height: 36px;
+  max-width: 672px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  background: #00d9ff;
+  height: 100%;
+  transition: width 180ms ease;
+}
+
+.fight-stage {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.fight-card {
+  align-content: center;
+  aspect-ratio: 16 / 9;
+  background: #08090f;
+  border: 2px dashed #00d9ff;
+  display: grid;
+  max-width: 980px;
+  padding: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.error {
+  background: #7f1d1d;
+  margin: 16px auto;
+  max-width: 760px;
+  padding: 12px 16px;
+}
+
+.scrim {
+  background: rgb(0 0 0 / 0.48);
+  border: 0;
+  inset: 0;
+  position: fixed;
+  z-index: 2;
+}
+
+.close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .sidebar {
+    inset: 0 auto 0 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 160ms ease;
+    width: min(86vw, 420px);
+    z-index: 3;
+  }
+
+  .sidebar-open {
+    transform: translateX(0);
+  }
+
+  .top-stats-bar {
+    grid-template-columns: auto 1fr 1fr 1fr;
+  }
+
+  .game-stage {
+    padding: 24px 16px;
+  }
+
+  .chat-composer {
+    border-radius: 26px;
+    margin-bottom: 16px;
+    width: calc(100% - 24px);
+  }
+
+  .footer-meter {
+    padding: 22px 16px;
+  }
+
+  .main-panel {
+    grid-template-rows: 62px minmax(0, 1fr) auto;
+  }
+}
