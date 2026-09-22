@@ -10,6 +10,9 @@ __pycache__/
 .pytest_cache/
 .venv/
 *.pyc
+*.egg-info
+
+# DB
 *.sqlite3
 
 # Node
@@ -20,4 +23,5 @@ dist/
 # Local env
 .env
 
+# Agent
 AGENT.md
