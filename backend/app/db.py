@@ -48,6 +48,7 @@ class Database:
 
     def initialize(self) -> None:
         with self.connect() as connection:
+            self._drop_legacy_schema_if_needed(connection)
             connection.executescript(
                 """
                 CREATE TABLE IF NOT EXISTS games (
@@ -104,6 +105,26 @@ class Database:
                 CREATE INDEX IF NOT EXISTS idx_events_game_round ON events(game_id, round_id);
                 """
             )
+
+    def _drop_legacy_schema_if_needed(self, connection: sqlite3.Connection) -> None:
+        games_exists = connection.execute(
+            "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'games'"
+        ).fetchone()
+        if games_exists is None:
+            return
+
+        game_columns = {row["name"] for row in connection.execute("PRAGMA table_info(games)").fetchall()}
+        if "active_round_id" in game_columns and "strikes" in game_columns and "mode" in game_columns:
+            return
+
+        connection.executescript(
+            """
+            DROP TABLE IF EXISTS events;
+            DROP TABLE IF EXISTS turns;
+            DROP TABLE IF EXISTS rounds;
+            DROP TABLE IF EXISTS games;
+            """
+        )
 
     def create_game(self) -> tuple[GameState, Round]:
         now = datetime.now(timezone.utc)

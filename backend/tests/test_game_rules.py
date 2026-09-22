@@ -7,7 +7,7 @@ from app.models import ArgumentQuality, GameState, GameStatus, JudgeResult, Play
 def make_game(**overrides) -> GameState:
     now = datetime.now(timezone.utc)
     data = {
-        "id": 1,
+        "id": "game-1",
         "active_round_id": "round-1",
         "persuasion": 0,
         "anger": 0,
