@@ -1,0 +1,32 @@
+.emptyChat {
+  display: grid;
+  gap: 28px;
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
+}
+
+.mockBubbleLeft,
+.mockBubbleRight,
+.mockBubbleLeftWide {
+  background: rgb(217 217 217 / 0.22);
+  border: 1px solid rgb(217 217 217 / 0.1);
+  min-height: 96px;
+  width: min(560px, 62%);
+}
+
+.mockBubbleRight {
+  border-radius: 24px 24px 4px 24px;
+  justify-self: end;
+}
+
+.mockBubbleLeft,
+.mockBubbleLeftWide {
+  border-radius: 24px 24px 24px 4px;
+  justify-self: start;
+}
+
+.mockBubbleLeftWide {
+  min-height: 128px;
+  width: min(680px, 76%);
+}

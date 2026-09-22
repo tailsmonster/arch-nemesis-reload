@@ -1,0 +1,14 @@
+.status {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.status span {
+  background: rgb(0 217 255 / 0.14);
+  border: 1px solid rgb(0 217 255 / 0.34);
+  border-radius: 999px;
+  color: var(--color-cyan);
+  padding: 4px 10px;
+  text-transform: uppercase;
+}

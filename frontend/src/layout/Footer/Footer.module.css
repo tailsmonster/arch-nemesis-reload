@@ -1,0 +1,42 @@
+.footer {
+  align-items: center;
+  background: var(--color-panel);
+  border-top: var(--workspace-border);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) auto;
+  min-height: 92px;
+  padding: 18px 28px;
+}
+
+.meterGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.meterGroup span,
+.status {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.track {
+  background: rgb(217 217 217 / 0.22);
+  border-radius: 999px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  transition: width 180ms ease;
+}
+
+.persuasion {
+  background: var(--color-cyan);
+}
+
+.anger {
+  background: var(--color-danger);
+}
