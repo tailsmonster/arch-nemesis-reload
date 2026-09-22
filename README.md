@@ -1,4 +1,4 @@
-# arch-nemesis-reload
+# Arch Nemesis: Reload
 Convince an AI Arch Linux zealot to install Windows. A stateful agentic persuasion game built with LangGraph.
 
 ## First vertical slice
