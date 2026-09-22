@@ -1,17 +1,20 @@
 from datetime import datetime, timezone
 
 from app.game_rules import RuleConfig, apply_judgement
-from app.models import ArgumentQuality, GameState, GameStatus, JudgeResult
+from app.models import ArgumentQuality, GameState, GameStatus, JudgeResult, PlayMode
 
 
 def make_game(**overrides) -> GameState:
     now = datetime.now(timezone.utc)
     data = {
         "id": 1,
+        "active_round_id": "round-1",
         "persuasion": 0,
         "anger": 0,
+        "strikes": 0,
         "turn_count": 0,
         "status": GameStatus.ACTIVE,
+        "mode": PlayMode.CHAT,
         "created_at": now,
         "updated_at": now,
     }
@@ -63,3 +66,12 @@ def test_completed_games_do_not_change():
     updated = apply_judgement(game, make_judgement(-5, 10))
 
     assert updated == game
+
+
+def test_offensive_judgement_adds_strike_and_sets_fight_mode():
+    game = make_game()
+
+    updated = apply_judgement(game, make_judgement(0, 5))
+
+    assert updated.strikes == 1
+    assert updated.mode == PlayMode.FIGHT

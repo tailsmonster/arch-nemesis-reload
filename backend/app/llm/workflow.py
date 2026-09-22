@@ -1,9 +1,13 @@
+import logging
 from typing import TypedDict
 
 from langgraph.graph import END, StateGraph
 
 from app.llm.dry_run import generate_nemesis_response, judge_argument
 from app.models import GameState, JudgeResult
+
+
+logger = logging.getLogger(__name__)
 
 
 class TurnWorkflowState(TypedDict):
@@ -14,6 +18,7 @@ class TurnWorkflowState(TypedDict):
 
 
 def nemesis_node(state: TurnWorkflowState) -> TurnWorkflowState:
+    logger.info("Running Nemesis node game_id=%s", state["game"].id)
     return {
         **state,
         "nemesis_response": generate_nemesis_response(state["player_argument"], state["game"]),
@@ -21,6 +26,7 @@ def nemesis_node(state: TurnWorkflowState) -> TurnWorkflowState:
 
 
 def judge_node(state: TurnWorkflowState) -> TurnWorkflowState:
+    logger.info("Running Judge node game_id=%s", state["game"].id)
     return {
         **state,
         "judgement": judge_argument(state["player_argument"], state["game"]),
