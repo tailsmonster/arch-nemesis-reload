@@ -1,4 +1,4 @@
-from arch_nemesis.agents.nemesis.agent import dry_run_nemesis
+from arch_nemesis.agents.nemesis.agent import dry_run_nemesis, looks_like_generic_refusal, refusal_fallback
 from arch_nemesis.agents.nemesis.models import NemesisResponse
 from arch_nemesis.config import get_settings
 from arch_nemesis.game.models import RuleApplication
@@ -22,4 +22,6 @@ def respond(argument: str, game: dict, rules: RuleApplication, game_id: str | No
     )
     result = get_llm_client().complete(prompt, template.sha256, "nemesis")
     trace_llm_result("nemesis", result, game_id=game_id)
+    if looks_like_generic_refusal(result.text):
+        return refusal_fallback(argument)
     return NemesisResponse(content=result.text)
