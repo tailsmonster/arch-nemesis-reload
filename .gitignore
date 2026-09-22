@@ -4,3 +4,18 @@
 
 # LangGraph
 .langgraph_api/
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+*.sqlite3
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Local env
+.env
