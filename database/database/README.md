@@ -1,0 +1,1 @@
+This folder is for storing the SQLITE database that stores user data.
