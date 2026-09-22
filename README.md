@@ -51,7 +51,7 @@ flowchart TD
     class llm_fact_check,llm_director_evaluate,llm_nemesis_respond llm;
     class db_load_game_context,persist_turn db;
     class api_create_or_select_game,api_select_round_id,api_submit_player_argument,api_return_updated_state api;
-    ```
+```
 
 ## Backend stack
 
