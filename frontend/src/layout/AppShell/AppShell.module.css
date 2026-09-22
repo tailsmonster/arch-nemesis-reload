@@ -1,0 +1,11 @@
+.appShell {
+  --current-sidebar-width: var(--sidebar-width);
+  background: radial-gradient(circle at 70% 20%, rgb(0 217 255 / 0.1), transparent 28%), var(--color-bg);
+  display: flex;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.collapsed {
+  --current-sidebar-width: var(--sidebar-collapsed-width);
+}

@@ -1,0 +1,27 @@
+.history {
+  align-content: start;
+  display: grid;
+  gap: 14px;
+  overflow-y: auto;
+  padding: 28px 24px;
+}
+
+.item {
+  background: var(--color-bubble);
+  border: 1px solid transparent;
+  color: var(--color-bubble-text);
+  display: grid;
+  gap: 4px;
+  min-height: 44px;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.item small {
+  color: #606070;
+}
+
+.active {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 0 2px rgb(0 217 255 / 0.18);
+}
