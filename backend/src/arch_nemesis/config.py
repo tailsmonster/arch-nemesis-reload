@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "Arch Nemesis: Reload"
     environment: str = "development"
     dry_run_mode: bool = False
-    database_path: Path = Field(default=Path("backend/arch_nemesis.sqlite3"))
+    database_path: Path = Field(default=Path("../database/arch_nemesis.sqlite3"))
     llm_provider: str = "openai"
     llm_model: str = "gpt-4o-mini"
     llm_temperature: float = 0.8
