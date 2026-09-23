@@ -148,4 +148,7 @@ Real LLM behavior is the primary product path. Set `OPENAI_API_KEY` in `.env` fo
 
 Set `DRY_RUN_MODE=true` only for tests, CI, offline development, or deterministic eval harness runs.
 
-> "don't write a single line of code" - LC, Jan 2026
+
+## Famous Words from a former coworker
+
+> "don't let me catch you writing a single line of code" - LC, Jan 2026
